@@ -1,29 +1,33 @@
 import {useEffect,useState} from 'react'
-import { url } from '../utils/constants'
+import { url,errorMessage } from '../utils/constants'
 
 export default function useGetEmployeesData() {
     const [employees,setEmployees] = useState([])
     const [searchQuery,setSearchQuery] = useState([])
     const [loading,setLoading] = useState(false)
-    
+    const [error,setError] = useState(null)
+
     useEffect(()=>{
         async function getData() {
             try {
                 setLoading(true)
                 const response = await fetch(url)
-                const data = await response.json()
-                if(data)setLoading(false)
-                const withSelectedProp = data.map((ele)=>{
-                    return {...ele,selected:false,edit:false}
-                })
-                setEmployees(withSelectedProp)
-                setSearchQuery(withSelectedProp)
+                if(response.ok===true) {
+                    const data = await response.json()
+                    if(data)setLoading(false)
+                    const withSelectedProp = data.map((ele)=>{
+                        return {...ele,selected:false,edit:false}
+                    })
+                    setEmployees(withSelectedProp)
+                    setSearchQuery(withSelectedProp)
+                }
+               else throw Error(errorMessage)
             } 
             catch(error) {
-                // error handling is remaining
+                setError(error.message)
             }
         }
         getData()
     },[])
-    return [employees,searchQuery,loading,setSearchQuery,setEmployees]
+    return [employees,searchQuery,loading,setSearchQuery,setEmployees,error]
 }

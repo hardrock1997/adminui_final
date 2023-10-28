@@ -12,12 +12,13 @@ export default function MainContainer() {
 
     const [page,setPage]=useState(1)
     const [isSelectedAll,setIsSelectedAll] = useState(false)
-    const [employees,searchQuery,loading,setSearchQuery,setEmployees] = useGetEmployeesData()
+    const [employees,searchQuery,loading,setSearchQuery,setEmployees,error] = useGetEmployeesData()
 
     return (
         <>
+        {error!==null ? (<h1 className="error_text">{error}</h1>):('')}
             {
-                loading===true ? (<h1 className="loading_text">Loading...</h1>) 
+               loading===true ? (<h1 className="loading_text">Loading...</h1>) 
                 :
                 (
                     <>
