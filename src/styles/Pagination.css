@@ -1,0 +1,12 @@
+.pagination_btn {
+    display: flex;
+    justify-content: center;
+    list-style-type:none;
+    column-gap: 25px;
+    color: black;
+}
+.selected_page {
+    text-decoration: underline;
+    background-color:blue;
+    color: white;
+}

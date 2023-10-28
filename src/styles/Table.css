@@ -1,0 +1,50 @@
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    margin-right: 15px;
+}
+thead {
+    width: 100%;
+    border: 1px solid black;
+    margin-right: 15px;
+}
+ td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+.row_select {
+    background-color:#f2f2f2 ;
+}
+
+.delete_all {
+    margin: 15px;
+    background-color: red;
+    border-radius: 4px;
+    padding: 5px;
+    width: 12vw;
+}
+button:hover {
+    cursor: pointer;
+}
+.loading_text {
+    text-align: center;
+}
+.edit_btn {
+    margin-right: 15px;
+    padding: 5px;
+    width: 5vw;
+    background-color: rgba(0, 128, 0, 0.684);
+    border-radius: 4px;
+}
+.delete_btn {
+    margin-left: 15px;
+    padding: 5px;
+    width: 6vw;
+    background-color: rgba(255, 0, 0, 0.647);
+    border-radius: 4px;
+}
+.nothing_found_text {
+    text-align: center;
+}
