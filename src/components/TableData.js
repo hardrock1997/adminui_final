@@ -9,7 +9,7 @@ import Checkbox from './Checkbox'
 
 export default function TableData
 
-({page,
+({currentPage,
 searchQuery,
 setSearchQuery,
 setEmployees
@@ -27,7 +27,7 @@ setEmployees
                 <tbody>
                    {
                         searchQuery.length>0  ? (
-                           searchQuery.slice(page*perPageLimit-perPageLimit,page*perPageLimit).map((employee)=>{
+                           searchQuery.slice(currentPage*perPageLimit-perPageLimit,currentPage*perPageLimit).map((employee)=>{
                                 return (
                                     <React.Fragment key={employee.id}>
                                     <tr className={employee.selected===true ? 'row_select' : ''}>

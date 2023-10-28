@@ -10,7 +10,7 @@ import '../styles/Table.css'
 
 export default function MainContainer() {
 
-    const [page,setPage]=useState(1)
+    const [currentPage,setPage]=useState(1)
     const [isSelectedAll,setIsSelectedAll] = useState(false)
     const [employees,searchQuery,loading,setSearchQuery,setEmployees,error] = useGetEmployeesData()
 
@@ -26,7 +26,7 @@ export default function MainContainer() {
                         <Search
                         setSearchQuery={setSearchQuery}
                         employees={employees}
-                        page={page}
+                        page={currentPage}
                         setPage={setPage}
                         />
                     </div>
@@ -37,10 +37,10 @@ export default function MainContainer() {
                         setIsSelectedAll={setIsSelectedAll}
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}
-                        page={page}
+                        currentPage={currentPage}
                         />
                         <TableData
-                        page={page}
+                        currentPage={currentPage}
                         searchQuery={searchQuery}
                         setSearchQuery={setSearchQuery}
                         setEmployees={setEmployees}
@@ -51,11 +51,11 @@ export default function MainContainer() {
                         setSearchQuery={setSearchQuery}
                         setIsSelectedAll={setIsSelectedAll}
                         setEmployees={setEmployees}
-                        page={page}
+                        currentPage={currentPage}
                         setPage={setPage}
                         />
                         <Pagination
-                        page={page}
+                        currentPage={currentPage}
                         setPage={setPage}
                         searchQuery={searchQuery}
                        />

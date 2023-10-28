@@ -1,12 +1,15 @@
 import '../styles/Table.css'
-export default function DeleteAll({searchQuery,setSearchQuery,setIsSelectedAll,setEmployees,page,setPage}) {
+export default function DeleteAll({searchQuery,setSearchQuery,setIsSelectedAll,setEmployees,currentPage,setPage}) {
 
     function handleDeleteAll() {
+        console.log('hi')
         const afterDeleteAll = searchQuery.filter((employee)=>{
            return  employee.selected===false
         })
         afterDeleteAll.length===searchQuery.length ? alert('Select atleast one row to delete!') : alert('Selected rows deleted')
-        if((page===5 || page===4 || page===3 || page===2) && afterDeleteAll.length!==searchQuery.length)setPage(1)
+        if(currentPage>1 && afterDeleteAll.length!==searchQuery.length) {
+            setPage(1)
+        }
         setSearchQuery(afterDeleteAll)
         setIsSelectedAll(false)
         setEmployees(afterDeleteAll)

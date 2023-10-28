@@ -15,7 +15,9 @@ export default function Search
             setSearchQuery(employees)
             return 
         }
-        if(page===5 || page===4 || page===3 || page===2)setPage(1)
+        if(page>1) {
+            setPage(1)
+        }
         const filteredEmployees = employees.filter((employee)=>{
                 return employee.name.toLowerCase().includes(val) || employee.email.toLowerCase().includes(val) || employee.role.toLowerCase().includes(val)
             })
