@@ -40,9 +40,9 @@ setEmployees
                                   {
                                     employee.edit===false ? (
                                     <>
-                                    <td>{employee.name}</td>
-                                    <td>{employee.email}</td>
-                                    <td>{employee.role}</td>
+                                    <td data-label='Name'>{employee.name}</td>
+                                    <td data-label='Email'>{employee.email}</td>
+                                    <td data-label='Role'>{employee.role}</td>
                                     </>
                                     ) : 
                                     (

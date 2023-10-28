@@ -31,7 +31,7 @@ export default function MainContainer() {
                         />
                     </div>
                     <div>
-                    <table>
+                    <table className="responsive">
                         <SelectAllCheckBox
                         isSelectedAll={isSelectedAll}
                         setIsSelectedAll={setIsSelectedAll}

@@ -7,9 +7,9 @@ export default function Edit({editableValues,setEditableValues}) {
     }
     return (
         <>
-        <td><input onChange={(e)=>handleEditableValues(e)} name='name' value={editableValues.name}/></td>
-        <td><input onChange={(e)=>handleEditableValues(e)} name='email' value={editableValues.email}/></td>
-        <td><input onChange={(e)=>handleEditableValues(e)} name='role' value={editableValues.role}/></td>
+        <td data-label='Name'><input onChange={(e)=>handleEditableValues(e)} name='name' value={editableValues.name}/></td>
+        <td data-label='Email'><input onChange={(e)=>handleEditableValues(e)} name='email' value={editableValues.email}/></td>
+        <td data-label='Role'><input onChange={(e)=>handleEditableValues(e)} name='role' value={editableValues.role}/></td>
         </>
     )
 }
