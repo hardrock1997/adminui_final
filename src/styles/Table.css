@@ -51,9 +51,6 @@ button:hover {
 .nothing_found_text {
     text-align: center;
 }
-/* .error_message {
-    text-align: center;
-} */
 
 @media screen and (max-width: 480px) {
     .responsive thead {
@@ -81,9 +78,6 @@ button:hover {
       .responsive td:last-child {
         border-bottom: 1px solid;
       }
-      .delete_all {
-        word-break: break-all;
-      }
       table {
         position: relative;
         top: 45px;
@@ -95,23 +89,15 @@ button:hover {
       .delete_btn {
         width: 100px;
       }
-      .delete_all {
-        position: relative;
-        top:55px;
-      }
 }
 
-@media  screen and (max-width :875px) {
+@media  screen and (min-width :875px) {
     .delete_btn {
         width: 100px;
     }
     table {
         position: relative;
         top: 45px;
-    }
-    .delete_all {
-        position: relative;
-        top: 55px;
     }
 }
 @media  screen and (max-width :739px) {
@@ -129,35 +115,64 @@ button:hover {
     position: relative;
     top: 55px;
   }
-  .delete_all {
-    position: relative;
-    top: 55px;
-  }
  }
- @media  screen and (min-width :200px) {
-   
-    .delete_all {
-        width: 80px;
 
-    }
-   }
-   @media  screen and (max-width :367px) {
-   
-    .delete_all {
-        width: 80px;
+ 
+
+   @media screen and (min-width:876px) {
+    .delete_all{
         position: relative;
-        top: 100px;
-        left: 150px;
-
+        top: 55px;
+        left: 50px;
+        width: auto;
     }
    }
-   @media  screen and (max-width :258px) {
-   
-    .delete_all {
-        width: 80px;
+   @media screen and (max-width:875px) {
+    .delete_all{
         position: relative;
-        top: 100px;
-        left: 65px;
-
+        top: 55px;
+        left: 140px;
+        width: auto;
     }
    }
+   @media screen and (max-width:639px) {
+    .delete_all{
+        position: relative;
+        top: 35px;
+        left: 280px;
+        width: auto;
+    }
+   }
+   @media screen and (max-width:600px) {
+    .delete_all{
+        position: relative;
+        top: 35px;
+        left: 280px;
+        width: auto;
+    }
+   }
+   @media screen and (max-width:500px) {
+    .delete_all{
+        position: relative;
+        top: 35px;
+        left: 240px;
+        width: auto;
+    }
+   }
+   @media screen and (max-width:380px) {
+    .delete_all{
+        position: relative;
+        top: 35px;
+        left: 180px;
+        width: auto;
+    }
+   }
+   @media screen and (max-width:260px) {
+    .delete_all{
+        position: relative;
+        top: 35px;
+        left: 80px;
+        width: auto;
+    }
+   }
+ 
