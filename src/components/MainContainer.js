@@ -12,11 +12,10 @@ export default function MainContainer() {
 
     const [currentPage,setPage]=useState(1)
     const [isSelectedAll,setIsSelectedAll] = useState(false)
-    const [employees,searchQuery,loading,setSearchQuery,setEmployees,error] = useGetEmployeesData()
-
+    const [employees,searchQuery,loading,setSearchQuery,setEmployees] = useGetEmployeesData()
+  
     return (
         <>
-        {error!==null ? (<h1 className="error_text">{error}</h1>):('')}
             {
                loading===true ? (<h1 className="loading_text">Loading...</h1>) 
                 :
@@ -24,35 +23,35 @@ export default function MainContainer() {
                     <>
                     <div>
                         <Search
-                        setSearchQuery={setSearchQuery}
-                        employees={employees}
-                        page={currentPage}
-                        setPage={setPage}
+                            setSearchQuery={setSearchQuery}
+                            employees={employees}
+                            page={currentPage}
+                            setPage={setPage}
                         />
                     </div>
                     <div>
                     <table className="responsive">
                         <SelectAllCheckBox
-                        isSelectedAll={isSelectedAll}
-                        setIsSelectedAll={setIsSelectedAll}
-                        searchQuery={searchQuery}
-                        setSearchQuery={setSearchQuery}
-                        currentPage={currentPage}
+                            isSelectedAll={isSelectedAll}
+                            setIsSelectedAll={setIsSelectedAll}
+                            searchQuery={searchQuery}
+                            setSearchQuery={setSearchQuery}
+                            currentPage={currentPage}
                         />
                         <TableData
-                        currentPage={currentPage}
-                        searchQuery={searchQuery}
-                        setSearchQuery={setSearchQuery}
-                        setEmployees={setEmployees}
+                            currentPage={currentPage}
+                            searchQuery={searchQuery}
+                            setSearchQuery={setSearchQuery}
+                            setEmployees={setEmployees}
                         />
                     </table>
                         <DeleteAll
-                        searchQuery={searchQuery}
-                        setSearchQuery={setSearchQuery}
-                        setIsSelectedAll={setIsSelectedAll}
-                        setEmployees={setEmployees}
-                        currentPage={currentPage}
-                        setPage={setPage}
+                            searchQuery={searchQuery}
+                            setSearchQuery={setSearchQuery}
+                            setIsSelectedAll={setIsSelectedAll}
+                            setEmployees={setEmployees}
+                            currentPage={currentPage}
+                            setPage={setPage}
                         />
                         <Pagination
                         currentPage={currentPage}

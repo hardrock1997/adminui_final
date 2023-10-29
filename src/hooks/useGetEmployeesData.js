@@ -23,11 +23,14 @@ export default function useGetEmployeesData() {
                 }
                else throw Error(errorMessage)
             } 
-            catch(error) {
-                setError(error.message)
+            catch(e) {
+                console.log(error)
+                setError(()=>{
+                    throw e
+                })
             }
         }
         getData()
-    },[])
-    return [employees,searchQuery,loading,setSearchQuery,setEmployees,error]
+    },[error])
+    return [employees,searchQuery,loading,setSearchQuery,setEmployees]
 }
