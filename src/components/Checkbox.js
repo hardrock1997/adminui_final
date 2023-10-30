@@ -27,9 +27,9 @@ setSearchQuery
        <>
          <td>
            <input
-            type="checkbox"
-            checked={checkedStatus}
-            onChange={()=>handleCheckboxChange(id)}
+                type="checkbox"
+                checked={checkedStatus}
+                onChange={()=>handleCheckboxChange(id)}
             />
          </td>
        </>

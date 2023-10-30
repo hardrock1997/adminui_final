@@ -90,6 +90,13 @@ button:hover {
         width: 100px;
       }
 }
+@media  screen and (min-width :482px) {
+    table {
+        position: relative;
+        top: 55px;
+    }
+}
+
 
 @media  screen and (min-width :875px) {
     .delete_btn {

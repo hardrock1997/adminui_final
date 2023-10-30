@@ -2,7 +2,6 @@ import '../styles/Table.css'
 export default function DeleteAll({searchQuery,setSearchQuery,setIsSelectedAll,setEmployees,currentPage,setPage}) {
 
     function handleDeleteAll() {
-        console.log('hi')
         const afterDeleteAll = searchQuery.filter((employee)=>{
            return  employee.selected===false
         })

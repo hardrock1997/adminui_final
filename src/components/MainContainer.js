@@ -54,9 +54,9 @@ export default function MainContainer() {
                             setPage={setPage}
                         />
                         <Pagination
-                        currentPage={currentPage}
-                        setPage={setPage}
-                        searchQuery={searchQuery}
+                            currentPage={currentPage}
+                            setPage={setPage}
+                            searchQuery={searchQuery}
                        />
                     </div>
                     </>

@@ -30,37 +30,37 @@ setEmployees
                            searchQuery.slice(currentPage*perPageLimit-perPageLimit,currentPage*perPageLimit).map((employee)=>{
                                 return (
                                     <React.Fragment key={employee.id}>
-                                    <tr className={employee.selected===true ? 'row_select' : ''}>
+                                        <tr className={employee.selected===true ? 'row_select' : ''}>
                                     <Checkbox
-                                    checkedStatus={employee.selected}
-                                    id={employee.id}
-                                    searchQuery={searchQuery}
-                                    setSearchQuery={setSearchQuery}
-                                        />
+                                        checkedStatus={employee.selected}
+                                        id={employee.id}
+                                        searchQuery={searchQuery}
+                                        setSearchQuery={setSearchQuery}
+                                    />
                                   {
                                     employee.edit===false ? (
                                     <>
-                                    <td data-label='Name'>{employee.name}</td>
-                                    <td data-label='Email'>{employee.email}</td>
-                                    <td data-label='Role'>{employee.role}</td>
+                                        <td data-label='Name'>{employee.name}</td>
+                                        <td data-label='Email'>{employee.email}</td>
+                                        <td data-label='Role'>{employee.role}</td>
                                     </>
                                     ) : 
                                     (
                                     <Edit
-                                    editableValues={editableValues}
-                                    setEditableValues={setEditableValues}
+                                        editableValues={editableValues}
+                                        setEditableValues={setEditableValues}
                                     />
                                     )
                                   }
                                     <ActionButtons
-                                    isEdit={isEdit}
-                                    searchQuery={searchQuery}
-                                    editableValues={editableValues}
-                                    setEditableValues={setEditableValues}
-                                    setIsEdit={setIsEdit}
-                                    id={employee.id}
-                                    setSearchQuery={setSearchQuery}
-                                    setEmployees={setEmployees}
+                                        isEdit={isEdit}
+                                        searchQuery={searchQuery}
+                                        editableValues={editableValues}
+                                        setEditableValues={setEditableValues}
+                                        setIsEdit={setIsEdit}
+                                        id={employee.id}
+                                        setSearchQuery={setSearchQuery}
+                                        setEmployees={setEmployees}
                                     />
                                     </tr>
                                     </React.Fragment>
