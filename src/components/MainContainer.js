@@ -21,15 +21,13 @@ export default function MainContainer() {
                 :
                 (
                     <>
-                    <div>
+                
                         <Search
                             setSearchQuery={setSearchQuery}
                             employees={employees}
                             page={currentPage}
                             setPage={setPage}
                         />
-                    </div>
-                    <div>
                     <table className="responsive">
                         <SelectAllCheckBox
                             isSelectedAll={isSelectedAll}
@@ -58,7 +56,6 @@ export default function MainContainer() {
                             setPage={setPage}
                             searchQuery={searchQuery}
                        />
-                    </div>
                     </>
                 ) }
         </>

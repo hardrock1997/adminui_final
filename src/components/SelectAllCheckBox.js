@@ -15,21 +15,19 @@ export default function SelectAllCheckBox({isSelectedAll,setIsSelectedAll,search
         setSearchQuery([...searchQuery])  
     }
     return (
-        <>
-           <thead>
+                    <thead>
                             <tr>
-                            <th> <input
-                                type="checkbox"
-                                checked={isSelectedAll}
-                                onChange={handleAllCheckboxChange}
+                                <th> <input
+                                    type="checkbox"
+                                    checked={isSelectedAll}
+                                    onChange={handleAllCheckboxChange}
                                 />
-                            </th>
-                            <th>Name</th> 
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Actions</th>
+                                </th>
+                                <th>Name</th> 
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
-        </>
     )
 }

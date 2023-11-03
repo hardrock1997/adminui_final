@@ -27,10 +27,11 @@ export default function Search
     return (
         <div className='search_container'>
             <input 
-            type="text"
-            placeholder="Search by name, email or role"
-            className="search"
-            onChange={handleSearch}
+                type="text"
+                placeholder="Search by name, email or role"
+                className="search"
+                onChange={handleSearch}
+                data-testid='searchInput'
             />
         </div>
     )

@@ -20,7 +20,7 @@ searchQuery
             <ul className="pagination_btn">
             {currentPage>1 && <li onClick={handlePrevPage}>Prev</li>}
                 {
-                    [...Array(Math.ceil(searchQuery.length/10))].map((_,i)=>{
+                    [...Array(Math.ceil(searchQuery?.length/10))].map((_,i)=>{
                         return <li key={i+1} onClick={()=>handleNumberClick(i+1)} className={currentPage===i+1 ? 'selected_page' : ''} >{i+1}</li>
                     })
                 }

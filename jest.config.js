@@ -6,7 +6,9 @@
 module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
-
+  moduleNameMapper: {
+    "\\.(css|scss|less)$": "/Users/yashmundra/Desktop/adminui_final/adminuigeektrust/mocks/styleMock.js"
+  },
   // Stop running tests after `n` failures
   // bail: 0,
 

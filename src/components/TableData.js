@@ -26,7 +26,7 @@ setEmployees
 
                 <tbody>
                    {
-                        searchQuery.length>0  ? (
+                        searchQuery?.length>0  ? (
                            searchQuery.slice(currentPage*perPageLimit-perPageLimit,currentPage*perPageLimit).map((employee)=>{
                                 return (
                                     <React.Fragment key={employee.id}>

@@ -18,6 +18,7 @@ export default function useGetEmployeesData() {
                     const withSelectedProp = data.map((ele)=>{
                         return {...ele,selected:false,edit:false}
                     })
+                    console.log(withSelectedProp)
                     setEmployees(withSelectedProp)
                     setSearchQuery(withSelectedProp)
                 }

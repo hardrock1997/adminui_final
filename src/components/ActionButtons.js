@@ -75,11 +75,11 @@ export default function ActionButtons
     }
 
     return (
-        <>
+        
           <td data-label='Action buttons'>
             <button className="edit_btn" onClick={handleEdit}>{isEdit===false ? 'Edit' : 'Update'}</button>
             <button className="delete_btn" onClick={()=>handleDeleteOrCancel(id)}>{isEdit===false ? 'Delete' : 'Cancel'}</button>
            </td>
-        </>
+        
     )
 }
