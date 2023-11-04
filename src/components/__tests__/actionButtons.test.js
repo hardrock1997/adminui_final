@@ -18,6 +18,8 @@ global.fetch().then((res)=>{
     mockData=data
 })
 
+
+
 test('should load with two buttons',()=>{
     render(<ActionButtons isEdit={false} searchQuery={mockData} editableValues={{}} setIsEdit={jest.fn()} id={1} setSearchQuery={jest.fn()} setEmployees={jest.fn()}/>)
     const actionButtons = screen.getAllByRole('button')
@@ -35,3 +37,32 @@ test('should have delete button by default on load',()=>{
     const deleteButtonText = screen.getByText('Delete')
     expect(deleteButtonText).toBeInTheDocument()
 })
+
+let props;
+beforeEach(() => {
+  props = {
+    isEdit: false,
+    searchQuery:mockData,
+    editableValues: { name: '', email: '', role: '' },
+    setEditableValues: jest.fn(),
+    setIsEdit: jest.fn(),
+    id: 1,
+    setSearchQuery: jest.fn(),
+    setEmployees: jest.fn()
+  };
+})
+
+test('should call handleEdit when Edit button is clicked', () => {
+    render(<ActionButtons {...props} />)
+    const editButton = screen.getByText('Edit')
+    fireEvent.click(editButton);
+    expect(props.setIsEdit).toHaveBeenCalledWith(true);
+  })
+
+  test('should call handleDeleteOrCancel when Delete button is clicked', () => {
+    render(<ActionButtons {...props} />);
+    const deleteButton = screen.getByText('Delete');
+    fireEvent.click(deleteButton);
+    expect(props.setSearchQuery).toHaveBeenCalledWith(mockData);
+    expect(props.setEmployees).toHaveBeenCalledWith(mockData);
+  })
