@@ -3,7 +3,6 @@ import {render,screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MOCK_DATA } from '../../../mocks/mockTableData'
 import { perPageLimit } from '../../utils/constants'
-import Search from '../Search'
 
 jest.mock('../Checkbox',()=>()=><div data-testid='mock-checkbox'></div>)
 jest.mock('../ActionButtons', () => () => <div data-testid="mock-action-buttons"></div>)
