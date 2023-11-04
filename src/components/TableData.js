@@ -30,7 +30,7 @@ setEmployees
                            searchQuery.slice(currentPage*perPageLimit-perPageLimit,currentPage*perPageLimit).map((employee)=>{
                                 return (
                                     <React.Fragment key={employee.id}>
-                                        <tr className={employee.selected===true ? 'row_select' : ''}>
+                                        <tr className={employee.selected===true ? 'row_select' : ''} data-testid='tableData'>
                                     <Checkbox
                                         checkedStatus={employee.selected}
                                         id={employee.id}
@@ -62,7 +62,7 @@ setEmployees
                                         setSearchQuery={setSearchQuery}
                                         setEmployees={setEmployees}
                                     />
-                                    </tr>
+                                        </tr>
                                     </React.Fragment>
                                 )
                             })

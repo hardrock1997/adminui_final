@@ -29,6 +29,7 @@ setSearchQuery
            <input
                 type="checkbox"
                 checked={checkedStatus}
+                data-testid='mock-checkbox'
                 onChange={()=>handleCheckboxChange(id)}
             />
          </td>
