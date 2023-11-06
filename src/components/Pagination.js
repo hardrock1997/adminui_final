@@ -1,10 +1,6 @@
 import '../styles/Pagination.css'
-export default function Pagination
 
-({currentPage,
-setPage,
-searchQuery
-}) {
+const Pagination = ({currentPage,setPage,filteredData})=>{
 
     function handlePrevPage() {
         setPage((prev)=>prev-1)
@@ -15,17 +11,20 @@ searchQuery
     function handleNumberClick(selectedPage) {
         setPage(selectedPage)
     }
-    return (
-        <div>
-            <ul className="pagination_btn">
+    
+return (
+    <div>
+        <ul className="pagination_btn">
             {currentPage>1 && <li onClick={handlePrevPage}>Prev</li>}
                 {
-                    [...Array(Math.ceil(searchQuery?.length/10))].map((_,i)=>{
+                    [...Array(Math.ceil(filteredData?.length/10))].map((_,i)=>{
                         return <li key={i+1} onClick={()=>handleNumberClick(i+1)} className={currentPage===i+1 ? 'selected_page' : ''} >{i+1}</li>
                     })
                 }
-                {currentPage<Math.ceil(searchQuery.length/10) && <li onClick={handleNextPage}>Next</li>}
+                {currentPage<Math.ceil(filteredData.length/10) && <li onClick={handleNextPage}>Next</li>}
             </ul>
         </div>
     )
 }
+
+export default Pagination

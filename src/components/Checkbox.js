@@ -4,12 +4,12 @@ export default function Checkbox
 
 ({checkedStatus,
 id,
-searchQuery,
-setSearchQuery
+filteredData,
+setFilteredData
 }) {
 
     function handleCheckboxChange(id) {
-        const array=searchQuery.filter((employee)=>{
+        const array=filteredData.filter((employee)=>{
             if(id===employee.id && employee.selected===true) {
                 employee.selected=false
                 return employee
@@ -20,7 +20,7 @@ setSearchQuery
             }
             else return employee
         })
-        setSearchQuery(array)
+        setFilteredData(array)
     }
     
     return (

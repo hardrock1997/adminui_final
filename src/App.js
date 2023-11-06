@@ -3,7 +3,7 @@ import MainContainer from '../src/components/MainContainer'
 import ErrorBoundary from './errorhandling/ErrorBoundary';
 import './App.css';
 
-function App() {
+const App = ()=> {
   return (
     <>
     <ErrorBoundary fallback={<>Oops,Something went wrong!!!</>}>
