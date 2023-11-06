@@ -28,7 +28,7 @@ const  MainContainer = ()=> {
         currentPage={currentPage}
         setPage={setPage}
     />
-    <table className="responsive">
+    <table className="responsive-table">
         <SelectAllCheckBox
             isSelectedAll={isSelectedAll}
             setIsSelectedAll={setIsSelectedAll}

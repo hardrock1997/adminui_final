@@ -1,185 +1,85 @@
-
-table {
-    width: 100%;
-    border: 1px solid black;
-    margin-right: 15px;
-    border-collapse: collapse;
-    word-break: break-all;
-}
-thead {
-    width: 100%;
-    border: 1px solid black;
-    margin-right: 15px;
-}
- td{
-    border: 1px solid black;
-    padding: 8px;
-    text-align: center;
-}
+  /* Section One*/
 .row_select {
     background-color:#f2f2f2 ;
 }
+th { background: rgb(0, 187, 255)}
+table {
+        border-collapse: collapse;
+        border: 1px solid #cdcdcd;
+        font: normal 12px arial; 
+        width: 100%;
+        margin-top: 55px;
+}
+td, th { border: 1px solid #cdcdcd; padding: 2px; word-wrap: break-word;}
 
-.delete_all {
-    margin: 15px;
-    background-color: red;
-    border-radius: 4px;
-    padding: 5px;
-    width: 12vw;
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+        /* Section three*/
+                table, thead, tbody, th, td, tr { 
+                        display: block;
+                        /* margin-left: 50px;
+                        margin-right: 50px;  */
+                }
+                /* Section four*/
+                thead tr { 
+                        position: absolute;
+                        top: -9999px;
+                        left: -9999px;
+                }
+                
+                tr { border-bottom: 1px solid #ccc; }
+/* Section five*/
+                td { 
+                     border: none;
+                     border-bottom: 1px solid #eee; 
+                     position: relative;
+                     padding-left: 50%; 
+                }
+                td:before { 
+                        position: absolute;
+                        top: 3px;
+                        left: 6px;
+                        width: 45%; 
+                        padding-right: 10px; 
+                        white-space: nowrap;
+                        font-weight: bold;
+                }
+                /* Section six*/
+
+                td:nth-of-type(1):before { content: "checkbox"; }
+                td:nth-of-type(2):before { content: "Name"; }
+                td:nth-of-type(3):before { content: "Email"; }
+                td:nth-of-type(4):before { content: "Role"; }
+                td:nth-of-type(5):before { content: "Action Buttons"; }
 }
-button:hover {
-    cursor: pointer;
-}
-.loading_text {
-    text-align: center;
-}
+
+/* Section seven*/
+        @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 480px) {
+                body { 
+                        padding: 0; 
+                        margin: 0; 
+                        width: 320px; }
+                }
+/* Section eight*/
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+                body { 
+                        width: 495px; 
+                }
+        }
+
 .edit_btn {
-    margin-right: 15px;
-    padding: 5px;
-    width: 5vw;
-    background-color: rgba(0, 128, 0, 0.684);
-    border-radius: 4px;
+    background-color: rgba(0, 128, 58, 0.806);
+    position: relative;
+    left: 20px;
 }
 .delete_btn {
-    margin-left: 15px;
-    padding: 5px;
-    width: 6vw;
-    background-color: rgba(255, 0, 0, 0.647);
-    border-radius: 4px;
-    word-break: break-all;
+    background-color: rgba(255, 0, 0, 0.557);
+    position:relative;
+    left: 30px;
 }
-.nothing_found_text {
-    text-align: center;
+.delete_all {
+    background-color:rgba(255, 0, 0, 0.557);
+    margin-top: 15px;
 }
-
-@media screen and (max-width: 480px) {
-    .responsive thead {
-        visibility: hidden;
-        height: 0;
-        position: absolute;
-    }
-    .responsive tr {
-        display: block;
-        margin-bottom: .625em;
-    }
-    .responsive td {
-        border: 1px solid;
-        border-bottom: none;
-        display: block;
-        font-size: .8em;
-        text-align: right;
-      }
-      .responsive td::before {
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      .responsive td:last-child {
-        border-bottom: 1px solid;
-      }
-      table {
-        position: relative;
-        top: 45px;
-        margin-top: 5px;
-      }
-      .edit_btn {
-        width: 100px;
-      }
-      .delete_btn {
-        width: 100px;
-      }
-}
-@media  screen and (min-width :482px) {
-    table {
-        position: relative;
-        top: 55px;
-    }
-}
-
-
-@media  screen and (min-width :875px) {
-    .delete_btn {
-        width: 100px;
-    }
-    table {
-        position: relative;
-        top: 45px;
-    }
-}
-@media  screen and (max-width :739px) {
-    .edit_btn {
-        width: 100px;
-    }
-}
-@media  screen and (max-width :704px) {
-   td {
-    word-wrap: break-word;
-   }
-}
-@media  screen and (min-width :876px) {
-  table {
-    position: relative;
-    top: 55px;
-  }
- }
-
- 
-
-   @media screen and (min-width:876px) {
-    .delete_all{
-        position: relative;
-        top: 55px;
-        left: 50px;
-        width: auto;
-    }
-   }
-   @media screen and (max-width:875px) {
-    .delete_all{
-        position: relative;
-        top: 55px;
-        left: 140px;
-        width: auto;
-    }
-   }
-   @media screen and (max-width:639px) {
-    .delete_all{
-        position: relative;
-        top: 35px;
-        left: 280px;
-        width: auto;
-    }
-   }
-   @media screen and (max-width:600px) {
-    .delete_all{
-        position: relative;
-        top: 35px;
-        left: 280px;
-        width: auto;
-    }
-   }
-   @media screen and (max-width:500px) {
-    .delete_all{
-        position: relative;
-        top: 35px;
-        left: 240px;
-        width: auto;
-    }
-   }
-   @media screen and (max-width:380px) {
-    .delete_all{
-        position: relative;
-        top: 35px;
-        left: 180px;
-        width: auto;
-    }
-   }
-   @media screen and (max-width:260px) {
-    .delete_all{
-        position: relative;
-        top: 35px;
-        left: 80px;
-        width: auto;
-    }
-   }
- 
