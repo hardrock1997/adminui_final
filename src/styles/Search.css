@@ -1,10 +1,9 @@
 .search {
     padding: 10px;
     width: 100vw;
+    margin: 8px;
 }
-.search_container {
-    margin: 15px;
-}
+
 @media screen and (max-width: 480px ) {
     .search {
       width: auto;

@@ -17,17 +17,15 @@ const Search = ({setFilteredData,employees,currentPage,setPage})=>{
         setFilteredData(filteredEmployees);
     }
 
-    return (
-    <div className='search_container'>
-        <input 
-            type="text"
-            placeholder="Search by name, email or role"
-            className="search"
-            onChange={handleSearch}
-            data-testid='searchInput'
-        />
-    </div>
-    )
+return (
+   <input 
+     type="text"
+     placeholder="Search by name, email or role"
+     className="search"
+     onChange={handleSearch}
+     data-testid='searchInput'
+   />
+)
 }
 
 export default Search;

@@ -4,6 +4,7 @@
     list-style-type:none;
     column-gap: 25px;
     color: black;
+    cursor: pointer;
 }
 .selected_page {
     text-decoration: underline;
