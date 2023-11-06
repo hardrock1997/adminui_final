@@ -47,7 +47,6 @@ const  MainContainer = ()=> {
             filteredData={filteredData}
             setFilteredData={setFilteredData}
             setIsSelectedAll={setIsSelectedAll}
-            setEmployees={setEmployees}
             currentPage={currentPage}
             setPage={setPage}
         />

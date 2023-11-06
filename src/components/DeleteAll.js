@@ -1,18 +1,16 @@
 import '../styles/Table.css'
 
-const DeleteAll = ({filteredData,setFilteredData,setIsSelectedAll,setEmployees,currentPage,setPage})=>{
+const DeleteAll = ({filteredData,setFilteredData,setIsSelectedAll,currentPage,setPage})=>{
 
 function handleDeleteAll() {
-    const afterDeleteAll = filteredData.filter((employee)=>{
-        return  employee.selected===false
-    })
+    const afterDeleteAll = filteredData.filter((employee)=>!employee.selected)
+
     afterDeleteAll.length===filteredData.length ? alert('Select atleast one row to delete!') : alert('Selected rows deleted')
         if(currentPage>1 && afterDeleteAll.length!==filteredData.length) {
             setPage(1)
         }
     setFilteredData(afterDeleteAll)
     setIsSelectedAll(false)
-    setEmployees(afterDeleteAll)
     }
 
 return (
