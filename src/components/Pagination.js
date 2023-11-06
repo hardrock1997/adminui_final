@@ -3,13 +3,13 @@ import '../styles/Pagination.css'
 const Pagination = ({currentPage,setPage,filteredData})=>{
 
     function handlePrevPage() {
-        setPage((prev)=>prev-1)
+        setPage((prev)=>prev-1);
     }
     function handleNextPage() {
-        setPage((prev)=>prev+1)
+        setPage((prev)=>prev+1);
     }
     function handleNumberClick(selectedPage) {
-        setPage(selectedPage)
+        setPage(selectedPage);
     }
     
 return (
@@ -27,4 +27,4 @@ return (
     )
 }
 
-export default Pagination
+export default Pagination;

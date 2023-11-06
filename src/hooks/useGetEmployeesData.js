@@ -17,7 +17,7 @@ useEffect(()=>{
             const data = await response.json()
             if(data) {
                 const withSelectedProp = data.map((ele)=>{
-                    return {...ele,selected:false,edit:false}
+                    return {...ele,selected:false,edit:false,nameError:false,emailError:false,roleError:false}
                 })
                 setEmployees(withSelectedProp)
             }     
@@ -35,5 +35,5 @@ useEffect(()=>{
 
     },[error])
 
-    return [employees,loading,setEmployees]
+    return [employees,loading]
 }

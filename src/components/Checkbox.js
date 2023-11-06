@@ -1,38 +1,28 @@
 import '../styles/Table.css'
 
-export default function Checkbox
+const Checkbox = ({checkedStatus,id,filteredData,setFilteredData})=>{
 
-({checkedStatus,
-id,
-filteredData,
-setFilteredData
-}) {
-
-    function handleCheckboxChange(id) {
-        const array=filteredData.filter((employee)=>{
-            if(id===employee.id && employee.selected===true) {
-                employee.selected=false
-                return employee
-            }
-            else if(id===employee.id && employee.selected===false) {
-                employee.selected=true
-                return employee
-            }
-            else return employee
-        })
-        setFilteredData(array)
+function handleCheckboxChange(id) {
+    const employeesWithToggledCheckbox = filteredData.map(employee=> {
+    if(id===employee.id) {
+        return {...employee, selected:!employee.selected}
     }
-    
-    return (
-       <>
-         <td>
-           <input
-                type="checkbox"
-                checked={checkedStatus}
-                data-testid='mock-checkbox'
-                onChange={()=>handleCheckboxChange(id)}
-            />
-         </td>
-       </>
-    )
+    return employee
+    })
+    setFilteredData(employeesWithToggledCheckbox)
 }
+
+return (
+<>
+    <td>
+        <input
+            type="checkbox"
+            checked={checkedStatus}
+            data-testid='mock-checkbox'
+            onChange={()=>handleCheckboxChange(id)}
+        />
+    </td>
+</>
+)}
+
+export default Checkbox;

@@ -1,17 +1,26 @@
 import {perPageLimit} from '../utils/constants'
 import React from 'react'
 import '../styles/Table.css'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import Edit from './Edit'
 import ActionButtons from './ActionButtons'
 import Checkbox from './Checkbox'
 
-const TableData = ({currentPage,filteredData,setFilteredData,setEmployees})=>{
-const [isEdit,setIsEdit] = useState(false)
+const TableData = ({currentPage,filteredData,setFilteredData})=>{
+const [isEdit,setIsEdit] = useState(false);
 const [editableValues,setEditableValues] = useState({
     name:'',
     email:'',
     role:''
+});
+
+useEffect(()=>{
+    filteredData.map((employee)=>{
+        employee.nameError=false;
+        employee.roleError=false;
+        employee.emailError=false;
+        return employee;
+    })
 })
 
 const noRowText = (
@@ -20,7 +29,7 @@ const noRowText = (
         Nothing found or All employee records are deleted!!
     </td>
 </tr>
-)
+);
 
 const tableData = filteredData.slice(currentPage*perPageLimit-perPageLimit,currentPage*perPageLimit).map((employee)=> (
         <tbody key={employee.id}>
@@ -34,15 +43,15 @@ const tableData = filteredData.slice(currentPage*perPageLimit-perPageLimit,curre
                 {
                  !employee.edit ? (
                     <>
-                     <td data-label='Name'>{employee.name}</td>
-                     <td data-label='Email'>{employee.email}</td>
-                     <td data-label='Role'>{employee.role}</td>
+                     {employee.nameError ? <td style={{color:'red'}}>{employee.name}</td> : <td data-label='Name'>{employee.name}</td>}
+                     {employee.emailError ? <td style={{color:'red'}}>{employee.email}</td>: <td data-label='Email'>{employee.email}</td>}
+                     {employee.roleError ? <td style={{color:'red'}}>{employee.role}</td> : <td data-label='Role'>{employee.role}</td>}
                     </>
                      ) : 
                      (
                      <Edit
-                         editableValues={editableValues}
-                         setEditableValues={setEditableValues}
+                        editableValues={editableValues}
+                        setEditableValues={setEditableValues}
                      />
                      )
                    }
@@ -54,7 +63,6 @@ const tableData = filteredData.slice(currentPage*perPageLimit-perPageLimit,curre
                     setIsEdit={setIsEdit}
                     id={employee.id}
                     setFilteredData={setFilteredData}
-                    setEmployees={setEmployees}
                 />
             </tr>
         </tbody>
@@ -64,4 +72,4 @@ const tableData = filteredData.slice(currentPage*perPageLimit-perPageLimit,curre
 
 }
 
-export default TableData
+export default TableData;

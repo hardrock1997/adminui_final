@@ -12,11 +12,11 @@ const  MainContainer = ()=> {
 
  const [currentPage,setPage]=useState(1)
  const [isSelectedAll,setIsSelectedAll] = useState(false)
- const [employees,loading,setEmployees] = useGetEmployeesData()
+ const [employees,loading] = useGetEmployeesData()
  const [filteredData,setFilteredData] = useState([])
-   
+
  useEffect(()=>{
-    setFilteredData([...employees])
+    setFilteredData([...employees]);
  },[employees])
 
  const loadingElement = <h1 className="loading_text">Loading...</h1>
@@ -40,7 +40,6 @@ const  MainContainer = ()=> {
             currentPage={currentPage}
             filteredData={filteredData}
             setFilteredData={setFilteredData}
-            setEmployees={setEmployees}
         />
     </table>
         <DeleteAll
