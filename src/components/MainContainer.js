@@ -21,13 +21,15 @@ const  MainContainer = ()=> {
 
  const loadingElement = <h1 className="loading_text">Loading...</h1>
  const tableContent =
-    <>   
-    <Search
-        setFilteredData={setFilteredData}
-        employees={employees}
-        currentPage={currentPage}
-        setPage={setPage}
-    />
+    <>
+    <header>  
+        <Search
+            setFilteredData={setFilteredData}
+            employees={employees}
+            currentPage={currentPage}
+            setPage={setPage}
+        />
+    </header> 
     <table className="responsive-table">
         <SelectAllCheckBox
             isSelectedAll={isSelectedAll}
@@ -42,6 +44,7 @@ const  MainContainer = ()=> {
             setFilteredData={setFilteredData}
         />
     </table>
+    <footer>
         <DeleteAll
             filteredData={filteredData}
             setFilteredData={setFilteredData}
@@ -54,6 +57,7 @@ const  MainContainer = ()=> {
             setPage={setPage}
             filteredData={filteredData}
     />
+    </footer>
 </>
 
 return loading ? loadingElement : tableContent
