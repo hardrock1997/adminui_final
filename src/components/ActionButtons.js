@@ -1,19 +1,17 @@
 import '../styles/Table.css'
-import { validateRole,validateEmail,validateName } from '../utils/constants'
+import {handleIfEmailIsWrong,handleIfRoleIsWrong,handleIfNameIsWrong,handleIfValidationPasses,validate } from '../utils/validations.js'
 
 const ActionButtons = ({isEdit,filteredData,editableValues,setEditableValues,setIsEdit,id,setFilteredData})=>{
 
-let responseOfRoleValidation = true
-let responseOfEmailValidation = true
-let responseOfNameValidation = true
-
-function handleEdit() {
-    setEmployeeToEdit(filteredData,editableValues);
-    setEditedEmployeeValues(editableValues);
+function handleEdit(id) {
+    console.log(id)
+    setEmployeeToEdit(filteredData,editableValues,id);
+    console.log(editableValues)
+    setEditedEmployeeValues(editableValues,id);
     setIsEdit(!isEdit);
 }
 
-function setEmployeeToEdit(filteredData,editableValues) {
+function setEmployeeToEdit(filteredData,editableValues,id) {
     filteredData.map((employee)=>{
         if(id===employee.id) {
             employee.edit=!isEdit;
@@ -24,78 +22,20 @@ function setEmployeeToEdit(filteredData,editableValues) {
     })
 }
 
-function handleIfNameIsWrong() {
-        filteredData.map((employee)=>{
-            if(id===employee.id) {
-                employee.name='Please enter a proper name';
-                employee.email=editableValues.email;
-                employee.role=editableValues.role;
-                employee.nameError=true;
-                return employee;
-            }
-            return employee;
-        })
-}
-
-function handleIfEmailIsWrong() {
-    filteredData.map((employee)=>{
-        if(id===employee.id) {
-            employee.name=editableValues.name;
-            employee.email='Please enter a proper email'
-            employee.role=editableValues.role;
-            employee.emailError=true;
-            return employee;
-        }
-        return employee;
-    })
-}
-
-function handleIfRoleIsWrong() {
-    filteredData.map((employee)=>{
-        if(id===employee.id) {
-            employee.name=editableValues.name;
-            employee.email=editableValues.email;
-            employee.role='Please enter a proper role';
-            employee.roleError=true;
-            return employee;
-        }
-        return employee;
-    })
-}
-
-function handleIfValidationPasses() {
-    filteredData.map((employee)=>{
-        if(id===employee.id) {
-           employee.name=editableValues.name;
-           employee.email=editableValues.email;
-           employee.role=editableValues.role;
-           return employee;
-       }
-       return employee;
-   })
-}
-
-function validate(editableValues) {
-    if(editableValues.role!=='' && editableValues.email!=='' && editableValues.name!=='') {
-        responseOfRoleValidation = validateRole(editableValues.role);
-        responseOfEmailValidation = validateEmail(editableValues.email);
-        responseOfNameValidation = validateName(editableValues.name);
-    }
-}
-
-function setEditedEmployeeValues(editableValues) {
-validate(editableValues);
+function setEditedEmployeeValues(editableValues,id) {
+const [responseOfNameValidation,responseOfEmailValidation,responseOfRoleValidation]=validate(editableValues);
 if(responseOfEmailValidation && responseOfNameValidation && responseOfRoleValidation) {
-    handleIfValidationPasses();
+    handleIfValidationPasses(filteredData,editableValues,id);
 }
 else if(!responseOfNameValidation) {
-  handleIfNameIsWrong();
+  handleIfNameIsWrong(filteredData,editableValues,id);
 } 
 else if(!responseOfEmailValidation) {
-  handleIfEmailIsWrong();
+    console.log('hey there')
+  handleIfEmailIsWrong(filteredData,editableValues,id);
 }
 else if(!responseOfRoleValidation) {
-  handleIfRoleIsWrong();
+  handleIfRoleIsWrong(filteredData,editableValues,id);
 }
 }
 
@@ -132,19 +72,16 @@ function handleDeleteOrCancel(id) {
     }
 }
 
-
 return (
         
-    <td data-label='Action buttons' data-testid="mock-action-buttons">
-    <button className="edit_btn" onClick={handleEdit}>
-        {!isEdit ? 'Edit' : 'Update'}
-    </button>
-    <button className="delete_btn" onClick={()=>handleDeleteOrCancel(id)}>
-        {!isEdit ? 'Delete' : 'Cancel'}
-    </button>
-    </td>
-
-    )
-}
+<td data-label='Action buttons' data-testid="mock-action-buttons">
+  <button className="edit_btn" onClick={()=>handleEdit(id)}>
+     {!isEdit ? 'Edit' : 'Update'}
+  </button>
+  <button className="delete_btn" onClick={()=>handleDeleteOrCancel(id)}>
+     {!isEdit ? 'Delete' : 'Cancel'}
+  </button>
+</td>
+)}
 
 export default ActionButtons;
