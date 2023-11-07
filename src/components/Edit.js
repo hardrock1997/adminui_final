@@ -1,6 +1,8 @@
 import '../styles/Table.css';
 
 const Edit = ({editableValues,setEditableValues})=>{
+
+// change the state with the updated values
 function handleEditableValues(e) {
     setEditableValues({...editableValues,[e.target.name]:e.target.value})
 }

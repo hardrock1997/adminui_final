@@ -3,14 +3,14 @@ import {handleIfEmailIsWrong,handleIfRoleIsWrong,handleIfNameIsWrong,handleIfVal
 
 const ActionButtons = ({isEdit,filteredData,editableValues,setEditableValues,setIsEdit,id,setFilteredData})=>{
 
+// handles the complete operation
 function handleEdit(id) {
-    console.log(id)
     setEmployeeToEdit(filteredData,editableValues,id);
-    console.log(editableValues)
     setEditedEmployeeValues(editableValues,id);
     setIsEdit(!isEdit);
 }
 
+// grabs the values before the edit
 function setEmployeeToEdit(filteredData,editableValues,id) {
     filteredData.map((employee)=>{
         if(id===employee.id) {
@@ -22,6 +22,7 @@ function setEmployeeToEdit(filteredData,editableValues,id) {
     })
 }
 
+// validates the updated data, set the errors if updates data fails the validation and completes the edit operation
 function setEditedEmployeeValues(editableValues,id) {
 const [responseOfNameValidation,responseOfEmailValidation,responseOfRoleValidation]=validate(editableValues);
 if(responseOfEmailValidation && responseOfNameValidation && responseOfRoleValidation) {
@@ -31,7 +32,6 @@ else if(!responseOfNameValidation) {
   handleIfNameIsWrong(filteredData,editableValues,id);
 } 
 else if(!responseOfEmailValidation) {
-    console.log('hey there')
   handleIfEmailIsWrong(filteredData,editableValues,id);
 }
 else if(!responseOfRoleValidation) {
@@ -39,6 +39,7 @@ else if(!responseOfRoleValidation) {
 }
 }
 
+// handles if the cancel button is clicked
 function getEmployeesIfNotEdited(filteredData) {
     const afterCancelEdit=filteredData.map((employee)=>{
         if(id===employee.id) {
@@ -53,6 +54,7 @@ function getEmployeesIfNotEdited(filteredData) {
     return afterCancelEdit
 }
 
+// delete an employee row from the table
 function deleteEmployee(id,filteredData) {
     const employeesAfterDeletion=filteredData.filter((employee)=>{
         return employee.id!==id;
@@ -60,6 +62,7 @@ function deleteEmployee(id,filteredData) {
     return employeesAfterDeletion;
     }
 
+// handles the delete and or cancel operations
 function handleDeleteOrCancel(id) {
     if(isEdit===false) {
         const employeesAfterDeletion = deleteEmployee(id,filteredData);

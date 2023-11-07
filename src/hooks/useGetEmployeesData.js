@@ -30,7 +30,7 @@ useEffect(()=>{
             setLoading(false)
         }
     }
-
+    // fetches the employees data from the server
     fetchData()
 
     },[error])

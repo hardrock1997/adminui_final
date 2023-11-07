@@ -19,7 +19,9 @@ const  MainContainer = ()=> {
     setFilteredData([...employees]);
  },[employees])
 
+ // to render when the data is still being fetched
  const loadingElement = <h1 className="loading_text">Loading...</h1>
+ // to render when the data is fetched from the server
  const tableContent =
     <>
     <header>  

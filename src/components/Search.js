@@ -1,7 +1,8 @@
 import '../styles/Search.css'
 
 const Search = ({setFilteredData,employees,currentPage,setPage})=>{
-
+        
+        // filters the data according to what is typed in the search bar
         function handleSearch(e) {
         const val=e.target.value;
         if(e.target.value==='') {

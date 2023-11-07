@@ -3,6 +3,7 @@ let responseOfRoleValidation = true;
 let responseOfEmailValidation = true;
 let responseOfNameValidation = true;
 
+// validates the updated role value
 const validateRole=(role) =>{
     console.log('role is ', role)
  if((role==='admin' || role==='member') && role.length>0) {
@@ -11,6 +12,7 @@ const validateRole=(role) =>{
     return false;
 }}
 
+// validates the updated email
 const validateEmail=(email) =>{
  if(emailRegex.test(email) && email.length>0) {
     return true;
@@ -18,6 +20,7 @@ const validateEmail=(email) =>{
     return false;
 }}
 
+// validates the updated name
 const validateName = (name)=>{
  if(name.length>1) {
     return true
@@ -25,6 +28,7 @@ const validateName = (name)=>{
     return false
  }}
 
+ // set the error for wrong updated email
 export  const handleIfEmailIsWrong = (filteredData,editableValues,id) =>{
  filteredData.map((employee)=>{
     if(id===employee.id) {
@@ -37,6 +41,7 @@ export  const handleIfEmailIsWrong = (filteredData,editableValues,id) =>{
     return employee;
 })}
 
+// set the error for the wrong updated role
 export const  handleIfRoleIsWrong=(filteredData,editableValues,id)=> {
   filteredData.map((employee)=>{
     if(id===employee.id) {
@@ -49,6 +54,7 @@ export const  handleIfRoleIsWrong=(filteredData,editableValues,id)=> {
     return employee;
 })}
 
+// set the error for the wrong updated name
 export const handleIfNameIsWrong=(filteredData,editableValues,id)=> {
   filteredData.map((employee)=>{
     if(id===employee.id) {
@@ -61,6 +67,7 @@ export const handleIfNameIsWrong=(filteredData,editableValues,id)=> {
     return employee;
 })}
 
+// returns the updated employee values if the validation passes
 export const handleIfValidationPasses=(filteredData,editableValues,id)=> {
   filteredData.map((employee)=>{
     if(id===employee.id) {
@@ -72,6 +79,7 @@ export const handleIfValidationPasses=(filteredData,editableValues,id)=> {
     return employee;
 })}
 
+// validates the updated values and is the main function for validation
 export const validate=(editableValues)=> {
   if(editableValues.role!=='' && editableValues.email!=='' && editableValues.name!=='') {
      responseOfRoleValidation = validateRole(editableValues.role);

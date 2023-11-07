@@ -2,12 +2,15 @@ import '../styles/Pagination.css'
 
 const Pagination = ({currentPage,setPage,filteredData})=>{
 
+    //takes to the previous page
     function handlePrevPage() {
         setPage((prev)=>prev-1);
     }
+    //takes to the next page
     function handleNextPage() {
         setPage((prev)=>prev+1);
     }
+    //takes to the page number which is clicked
     function handleNumberClick(selectedPage) {
         setPage(selectedPage);
     }

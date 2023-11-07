@@ -3,7 +3,7 @@ import { perPageLimit } from '../utils/constants'
 
 const SelectAllCheckBox = ({isSelectedAll,setIsSelectedAll,filteredData,setFilteredData,currentPage})=>{
 
-
+// mark all the rows that have checkbox checked
 function handleAllCheckboxChange() {
     setIsSelectedAll(!isSelectedAll);
     const selectedEmployees=filteredData.slice(currentPage*perPageLimit-perPageLimit,currentPage*perPageLimit);

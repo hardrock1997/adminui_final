@@ -2,6 +2,7 @@ import '../styles/Table.css'
 
 const DeleteAll = ({filteredData,setFilteredData,setIsSelectedAll,currentPage,setPage})=>{
 
+// delete all the rows that have been selected
 function handleDeleteAll() {
     const afterDeleteAll = filteredData.filter((employee)=>!employee.selected);
     if(afterDeleteAll.length===filteredData.length) {
