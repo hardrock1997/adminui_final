@@ -16,10 +16,10 @@ useEffect(()=>{
             }
             const data = await response.json()
             if(data) {
-                const withSelectedProp = data.map((ele)=>{
+                const employeeDataWithExtraProperties = data.map((ele)=>{
                     return {...ele,selected:false,edit:false,nameError:false,emailError:false,roleError:false}
                 })
-                setEmployees(withSelectedProp)
+                setEmployees(employeeDataWithExtraProperties)
             }     
              
         } catch(e) {
