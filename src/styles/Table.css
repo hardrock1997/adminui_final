@@ -9,6 +9,7 @@ table {
         font: normal 12px arial; 
         width: 100%;
         margin-top: 55px;
+        font-size: 20px;
 }
 td, th { border: 1px solid #cdcdcd; padding: 2px; word-wrap: break-word;}
 
@@ -17,8 +18,6 @@ td, th { border: 1px solid #cdcdcd; padding: 2px; word-wrap: break-word;}
         /* Section three*/
                 table, thead, tbody, th, td, tr { 
                         display: block;
-                        /* margin-left: 50px;
-                        margin-right: 50px;  */
                 }
                 /* Section four*/
                 thead tr { 
@@ -73,13 +72,16 @@ td, th { border: 1px solid #cdcdcd; padding: 2px; word-wrap: break-word;}
     background-color: rgba(0, 128, 58, 0.806);
     position: relative;
     left: 20px;
+    font-size: 20px;
 }
 .delete_btn {
     background-color: rgba(255, 0, 0, 0.557);
     position:relative;
     left: 30px;
+    font-size: 20px;
 }
 .delete_all {
     background-color:rgba(255, 0, 0, 0.557);
     margin-top: 15px;
+    font-size: 20px;
 }
