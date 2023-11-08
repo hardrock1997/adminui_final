@@ -5,7 +5,6 @@ let responseOfNameValidation = true;
 
 // validates the updated role value
 const validateRole=(role) =>{
-    console.log('role is ', role)
  if((role==='admin' || role==='member') && role.length>0) {
     return true;
 } else {

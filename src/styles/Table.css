@@ -73,15 +73,18 @@ td, th { border: 1px solid #cdcdcd; padding: 2px; word-wrap: break-word;}
     position: relative;
     left: 20px;
     font-size: 20px;
+    cursor: pointer;
 }
 .delete_btn {
     background-color: rgba(255, 0, 0, 0.557);
     position:relative;
     left: 30px;
     font-size: 20px;
+    cursor: pointer;
 }
 .delete_all {
     background-color:rgba(255, 0, 0, 0.557);
     margin-top: 15px;
     font-size: 20px;
+    cursor: pointer;
 }
