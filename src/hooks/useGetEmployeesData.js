@@ -1,5 +1,5 @@
 import {useEffect,useState} from 'react'
-import { url,errorMessage } from '../utils/constants'
+import { url } from '../utils/constants'
 
 export default function useGetEmployeesData() {
     const [employees,setEmployees] = useState([])
@@ -12,7 +12,7 @@ useEffect(()=>{
             setLoading(true)
             const response = await fetch(url)
             if(!response.ok) {
-                throw Error(errorMessage)
+                throw Error(response.status+' '+response.statusText)
             }
             const data = await response.json()
             if(data) {
