@@ -24,11 +24,13 @@ useEffect(()=>{
 })
 
 const noRowText = (
-<tr>
-    <td className='nothing_found_text'>
-        Nothing found or All employee records are deleted!!
-    </td>
-</tr>
+<tbody>
+    <tr>
+        <td className='nothing_found_text'>
+            Nothing found or All employee records are deleted!!
+        </td>
+    </tr>
+</tbody>
 );
 
 const tableData = filteredData.slice(currentPage*perPageLimit-perPageLimit,currentPage*perPageLimit).map((employee)=> (
