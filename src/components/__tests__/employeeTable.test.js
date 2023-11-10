@@ -1,4 +1,4 @@
-import TableData from '../TableData'
+import TableData from '../EmployeeTable'
 import {render,screen} from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MOCK_DATA } from '../../../mocks/mockTableData'

@@ -73,6 +73,9 @@ export const handleIfValidationPasses=(filteredData,editableValues,id)=> {
         employee.name=editableValues.name;
         employee.email=editableValues.email;
         employee.role=editableValues.role;
+        employee.nameError=false;
+        employee.emailError=false;
+        employee.roleError=false;
         return employee;
     }
     return employee;

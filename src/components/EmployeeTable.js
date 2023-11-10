@@ -1,27 +1,18 @@
 import {perPageLimit} from '../utils/constants'
 import React from 'react'
 import '../styles/Table.css'
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import Edit from './Edit'
 import ActionButtons from './ActionButtons'
 import Checkbox from './Checkbox'
 
-const TableData = ({currentPage,filteredData,setFilteredData})=>{
+const EmployeeTable = ({currentPage,filteredData,setFilteredData})=>{
 const [isEdit,setIsEdit] = useState(false);
 const [editableValues,setEditableValues] = useState({
     name:'',
     email:'',
     role:''
 });
-
-useEffect(()=>{
-    filteredData.map((employee)=>{
-        employee.nameError=false;
-        employee.roleError=false;
-        employee.emailError=false;
-        return employee;
-    })
-})
 
 const noRowText = (
 <tbody>
@@ -74,4 +65,4 @@ const tableData = filteredData.slice(currentPage*perPageLimit-perPageLimit,curre
 
 }
 
-export default TableData;
+export default EmployeeTable;

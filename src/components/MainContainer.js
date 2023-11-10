@@ -1,6 +1,6 @@
 import {useState,useEffect} from "react"
 import Search from "./Search"
-import TableData from "./TableData"
+import EmployeeTable from "./EmployeeTable"
 import React from "react"
 import Pagination from "./Pagination"
 import DeleteAll from "./DeleteAll"
@@ -43,7 +43,7 @@ const  MainContainer = ()=> {
             setFilteredData={setFilteredData}
             currentPage={currentPage}
         />
-        <TableData
+        <EmployeeTable
             currentPage={currentPage}
             filteredData={filteredData}
             setFilteredData={setFilteredData}
